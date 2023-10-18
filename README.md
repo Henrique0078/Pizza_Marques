@@ -154,7 +154,8 @@ O ID do pedido deve ser fornecido como parte da URL.
 O ID do pedido deve ser fornecido como parte da URL.
 ```
 
-Este relatório fornece detalhes sobre como utilizar a API, incluindo os métodos HTTP e os parâmetros necessários para cada operação. Lembre-se de substituir os valores fictícios nos exemplos de parâmetros pelos dados reais ao usar a API.
+Este relatório fornece detalhes sobre como utilizar a API, incluindo os métodos HTTP e os parâmetros necessários para cada operação.
+</br>Lembre-se de substituir os valores fictícios nos exemplos de parâmetros pelos dados reais ao usar a API.
 
 **Banco de dados:**
 ```Banco de dados
