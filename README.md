@@ -5,9 +5,12 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
 
 <h2>Sumário</h2>
 <ul>
-    <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-usuario">Registrar Usuário</a></li>
-    <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-cliente">Registrar Cliente</a></li>
-    <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#signin">SignIn</a></li>
+    <li><a href="https://github.com/Henrique0078/Pizza_Marques/tree/main#autenticação">Autenticação</a></li>
+    <ul>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-usuario">Registrar Usuário</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-cliente">Registrar Cliente</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#signin">SignIn</a></li>
+    </ul>
     <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#pedido">Pedido</a></li>
     <ul>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#fazer-pedido">Fazer Pedido</a></li>
@@ -20,6 +23,7 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
     </ul>
     <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#banco-de-dados">Banco de Dados</a></li>
 </ul>
+
 
 ## Autenticação
 
