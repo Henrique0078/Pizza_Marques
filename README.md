@@ -1,7 +1,7 @@
 # Relatório de Parâmetros da API
 
 Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP e os parâmetros necessários para realizar operações relacionadas à "Autenticação" e "Pedido".
-No final do Relatório consta o Banco de dados necessario para o funcionamento da API
+</br>No final do Relatório consta o Banco de dados necessario para o funcionamento da API
 
 ## Autenticação
 
