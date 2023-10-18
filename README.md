@@ -3,6 +3,24 @@
 Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP e os parâmetros necessários para realizar operações relacionadas à "Autenticação" e "Pedido".
 </br>No final do Relatório consta o Banco de dados necessario para o funcionamento da API
 
+<h2>Sumário</h2>
+<ul>
+    <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-usuario">Registrar Usuário</a></li>
+    <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-cliente">Registrar Cliente</a></li>
+    <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#signin">SignIn</a></li>
+    <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#pedido">Pedido</a></li>
+    <ul>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#fazer-pedido">Fazer Pedido</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#fazer-pedido-de-pizza">Fazer Pedido de Pizza</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#fazer-pedido-de-bebida">Fazer Pedido de Bebida</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#cancelar-pedido">Cancelar Pedido</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#listar-pedido">Listar Pedido</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#listar-pedido-de-bebida">Listar Pedido de Bebida</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#listar-pedido-de-pizza">Listar Pedido de Pizza</a></li>
+    </ul>
+    <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#banco-de-dados">Banco de Dados</a></li>
+</ul>
+
 ## Autenticação
 
 ### Registrar Usuario
