@@ -242,6 +242,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pedido` (
   `id_cliente_pedido` INT NOT NULL,
   `data_pedido` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status_pedido` VARCHAR(45) NOT NULL,
+  `preco_total_pedido` float NOT NULL,
   PRIMARY KEY (`id_pedido`),
   INDEX `fk_cliente_id_idx` (`id_cliente_pedido` ASC) VISIBLE,
   CONSTRAINT `fk_cliente_id`
