@@ -1,3 +1,10 @@
+# Como iniciar a API
+Para iniciar a API voce deve fazer o clone dela em sua maquina e então criar o banco de dados disponivel abaixo.</br>
+Após criar o banco de dados, entre no codigo da API e no seguinte arquivo: `PizzariaMarques\src\main\resources\application.properties` </br>
+Voce deve alterar o usuario, senha e caso tenha configurado outra porta para o banco de dados trocar a porta na url tambem.</br>
+</br>Caso apareça algum erro após iniciar a API configurada, tente alterar o parametro `server.port` e inicie novamente.
+
+
 # Relatório de Parâmetros da API
 
 Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP e os parâmetros necessários para realizar operações relacionadas à "Autenticação" e "Pedido".
@@ -10,16 +17,13 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-usuario">Registrar Usuário</a></li>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-cliente">Registrar Cliente</a></li>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#signin">SignIn</a></li>
+        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#salterar-cliente">Alterar Cliente</a></li>
     </ul>
     <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#pedido">Pedido</a></li>
     <ul>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#fazer-pedido">Fazer Pedido</a></li>
-        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#fazer-pedido-de-pizza">Fazer Pedido de Pizza</a></li>
-        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#fazer-pedido-de-bebida">Fazer Pedido de Bebida</a></li>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#cancelar-pedido">Cancelar Pedido</a></li>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#listar-pedido">Listar Pedido</a></li>
-        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#listar-pedido-de-bebida">Listar Pedido de Bebida</a></li>
-        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#listar-pedido-de-pizza">Listar Pedido de Pizza</a></li>
     </ul>
     <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#banco-de-dados">Banco de Dados</a></li>
 </ul>
@@ -51,11 +55,6 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
 {
     "nm_cliente": "Henrique",
     "cpfCliente": "50",
-    "logradouro_cliente": "rua",
-    "complemento_cliente": "opa",
-    "estado_cliente": "sp",
-    "cidade_cliente": "sp",
-    "numero_casa_cliente": "50",
     "id_usuario_cliente": 1
 }
 ```
@@ -73,6 +72,24 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
 }
 ```
 
+### Alterar Cliente
+- **Método:** PUT
+- **URL:** `http://localhost:9090/authentication/alterarCliente`
+
+**Parâmetros:**
+
+```json
+{
+  "cpfCliente": "50936978",
+  "logradouro_cliente": "Rua da Amostra, 123",
+  "complemento_cliente": "Apartamento 456",
+  "estado_cliente": "São Paulo",
+  "cidade_cliente": "São Paulo",
+  "numero_casa_cliente": "123"
+}
+
+```
+
 ## Pedido
 
 ### Fazer Pedido
@@ -83,57 +100,35 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
 
 ```json
 {
-    "id_cliente_pedido": 1,
-    "status_pedido": "Realizado"
+  "id_cliente_pedido": 1,
+  "status_pedido": "Em andamento",
+  "pedidoBebida": [
+    {
+      "quantidade_pedido_bebida": 2,
+      "tamanho_pedido_bebida": "Médio",
+      "idBebida": {
+        "id_bebida": 1
+      }
+    }
+  ],
+  "pedidoPizza": [
+    {
+      "quantidade_pedido_pizza": 1,
+      "tamanho_pedido_pizza": "Grande",
+      "idPizza": {
+        "id_pizza": 2
+      }
+    },
+    {
+      "quantidade_pedido_pizza": 1,
+      "tamanho_pedido_pizza": "Grande",
+      "idPizza": {
+        "id_pizza": 3
+      }
+    }
+  ]
 }
-```
 
-### Fazer Pedido de Pizza
-- **Método:** POST
-- **URL:** `http://localhost:9090/pedido/fazerPedidoPizza`
-
-**Parâmetros:**
-
-```json
-[
-    {
-        "idPedido": 1,
-        "quantidade_pedido_pizza": 1,
-        "valor_total_pedido_pizza": 0.0,
-        "tamanho_pedido_pizza": "Grande",
-        "idPizza": 1
-    },
-    {
-        "idPedido": 1,
-        "quantidade_pedido_pizza": 3,
-        "valor_total_pedido_pizza": 0.0,
-        "tamanho_pedido_pizza": "Grande",
-        "idPizza": 2
-    }
-]
-```
-
-### Fazer Pedido de Bebida
-- **Método:** POST
-- **URL:** `http://localhost:9090/pedido/fazerPedidoBebida`
-
-**Parâmetros:**
-
-```json
-[
-    {
-        "idPedido": 1,
-        "quantidade_pedido_bebida": 10,
-        "valor_total_pedido_bebida": 0.0,
-        "idBebida": 1
-    },
-    {
-        "idPedido": 1,
-        "quantidade_pedido_bebida": 5,
-        "valor_total_pedido_bebida": 0.0,
-        "idBebida": 2
-    }
-]
 ```
 
 ### Cancelar Pedido
@@ -149,26 +144,6 @@ O ID do pedido deve ser fornecido como parte da URL.
 ### Listar Pedido
 - **Método:** GET
 - **URL:** `http://localhost:9090/pedido/listarPedido/{id}`
-
-**Parâmetros:**
-
-```json
-O ID do pedido deve ser fornecido como parte da URL.
-```
-
-### Listar Pedido de Bebida
-- **Método:** GET
-- **URL:** `http://localhost:9090/pedido/listarPedidoBebida/{id}`
-
-**Parâmetros:**
-
-```json
-O ID do pedido deve ser fornecido como parte da URL.
-```
-
-### Listar Pedido de Pizza
-- **Método:** GET
-- **URL:** `http://localhost:9090/pedido/listarPedidoPizza/{id}`
 
 **Parâmetros:**
 
@@ -329,5 +304,7 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
 
 ```
