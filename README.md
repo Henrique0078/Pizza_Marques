@@ -316,4 +316,12 @@ insert into pizza values
 (8, "Frango", 40.99),
 (9, "4-Queijos", 42.99);
 
+insert into bebidas values
+(1, "Refrigerante Lata", 5.90),
+(2, "Refrigerante 1.5L", 10.90),
+(3, "Refrigerante 2 Litros", 15.90),
+(4, "Suco em lata", 5.90),
+(5, "Heineken", 10,90),
+(6, "Agua", 4.00);
+
 ```
