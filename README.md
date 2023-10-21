@@ -305,6 +305,15 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-
+insert into pizza values 
+(1, "Pepperoni", 42.99),
+(2, "Queijo", 25.99),
+(3, "Bacon", 37.99),
+(4, "A moda da casa", 37.99),
+(5, "Vegetariana", 35.99),
+(6, "Marguerita", 33.99),
+(7, "Calabresa", 25.99),
+(8, "Frango", 40.99),
+(9, "4-Queijos", 42.99);
 
 ```
