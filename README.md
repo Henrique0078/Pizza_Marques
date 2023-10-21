@@ -1,6 +1,6 @@
 # Como iniciar a API
 Para iniciar a API voce deve fazer o clone dela em sua maquina e então criar o banco de dados disponivel abaixo.</br>
-Após criar o banco de dados, entre no codigo da API e no seguinte arquivo: `PizzariaMarques\src\main\resources\application.properties` </br>
+Após criar o banco de dados, entre no codigo da API e no seguinte arquivo: `src\main\resources\application.properties` </br>
 Voce deve alterar o usuario, senha e caso tenha configurado outra porta para o banco de dados trocar a porta na url tambem.</br>
 </br>Caso apareça algum erro após iniciar a API configurada, tente alterar o parametro `server.port` e inicie novamente.
 
