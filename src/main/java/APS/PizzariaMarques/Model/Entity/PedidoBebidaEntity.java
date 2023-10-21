@@ -23,6 +23,5 @@ public class PedidoBebidaEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_bebida_ped_bb")
-    private BebidaEntity bebida;  // Relacionamento com BebidaEntity
+    private BebidaEntity idBebida;
 }
-

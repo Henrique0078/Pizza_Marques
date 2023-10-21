@@ -25,15 +25,5 @@ public class PedidoPizzaEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_pizza_ped_pz")
-    private PizzaEntity pizza;  // Relacionamento com PizzaEntity
-
-    @PrePersist
-    @PreUpdate
-    public void calculateTotalValue() {
-        if (quantidade_pedido_pizza > 0 && pizza != null) {
-            this.valor_total_pedido_pizza = quantidade_pedido_pizza * pizza.getPreco_unitario_pizza();
-        } else {
-            this.valor_total_pedido_pizza = 0.0f; // Ou outro valor padrão se a quantidade ou pizza for nula
-        }
-    }
+    private PizzaEntity idPizza;
 }

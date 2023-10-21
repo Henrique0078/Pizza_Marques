@@ -2,7 +2,7 @@ package APS.PizzariaMarques.Model.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
+import java.util.List;
 
 @Entity
 @Table(name = "bebida")
@@ -18,4 +18,7 @@ public class BebidaEntity {
     private String desc_bebida;
 
     private float preco_unitario_bebida;
+
+    @OneToMany(mappedBy = "idBebida")
+    private List<PedidoBebidaEntity> pedidosBebida;
 }

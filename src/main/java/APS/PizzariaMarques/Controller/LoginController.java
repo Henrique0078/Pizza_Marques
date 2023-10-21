@@ -50,4 +50,13 @@ public class LoginController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao Autenticar: " + e.getMessage());
         }
     }
+
+    @PutMapping("/alterarCliente")
+    public ResponseEntity<?> alterarCliente(@RequestBody ClienteEntity cliente){
+        try {
+            return clienteService.alterarCliente(cliente);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao alterar cliente: " + e.getMessage());
+        }
+    }
 }

@@ -1,9 +1,8 @@
 package APS.PizzariaMarques.Model.Entity;
 
-import java.util.List;
-
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
 
 @Entity
 @Table(name = "pizza")
@@ -17,9 +16,9 @@ public class PizzaEntity {
     private int id_pizza;
 
     private String desc_pizza;
-    
+
     private float preco_unitario_pizza;
 
-    @OneToMany(mappedBy = "pizza")
+    @OneToMany(mappedBy = "idPizza") // Definindo o relacionamento inverso
     private List<PedidoPizzaEntity> pedidosPizza;
 }

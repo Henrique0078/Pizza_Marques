@@ -13,11 +13,12 @@ public class PedidoPizzaService {
     @Autowired
     private PedidoPizzaRepository pedidoPizzaRepository;
 
-    public List<PedidoPizzaEntity> criarPedidoPizza(List<PedidoPizzaEntity> listaPizzas){
-        return pedidoPizzaRepository.saveAll(listaPizzas);
-    }
-
     public List<PedidoPizzaEntity> listarPedidosPizza(int id_pedido){
         return pedidoPizzaRepository.findByIdPedido(id_pedido);
     }
+
+    public List<PedidoPizzaEntity> criarPedidoPizza(List<PedidoPizzaEntity> listaPizzas){
+        return pedidoPizzaRepository.saveAll(listaPizzas);
+    }
+    
 }

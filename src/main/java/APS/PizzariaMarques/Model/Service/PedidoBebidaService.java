@@ -16,7 +16,7 @@ public class PedidoBebidaService {
     public List<PedidoBebidaEntity> listarPedidosBebida(int id_pedido){
         return pedidoBebidaRepository.findByIdPedido(id_pedido);
     }
-
+    
     public List<PedidoBebidaEntity> criarPedidoBebida(List<PedidoBebidaEntity> listaBebidas){
         return pedidoBebidaRepository.saveAll(listaBebidas);
     }

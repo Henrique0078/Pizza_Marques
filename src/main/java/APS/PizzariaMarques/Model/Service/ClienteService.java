@@ -21,4 +21,18 @@ public class ClienteService {
         return new ResponseEntity<ClienteEntity>(newCliente, HttpStatus.CREATED);
         }
     }
+
+    public ResponseEntity<?> alterarCliente(ClienteEntity cliente){
+        ClienteEntity newCliente = clienteRepository.findByCpfCliente(cliente.getCpfCliente());
+        if (newCliente != null) {
+            cliente.setId_cliente(newCliente.getId_cliente());
+            cliente.setCpfCliente(newCliente.getCpfCliente());
+            cliente.setNm_cliente(newCliente.getNm_cliente());
+            cliente.setId_usuario_cliente(newCliente.getId_usuario_cliente());
+            clienteRepository.save(cliente);
+            return ResponseEntity.ok(cliente);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("CPF de cliente não encontrado");
+        }
+    }
 }
