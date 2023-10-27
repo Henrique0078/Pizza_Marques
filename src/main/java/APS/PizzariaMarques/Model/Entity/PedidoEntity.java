@@ -21,6 +21,8 @@ public class PedidoEntity {
 
     private String status_pedido;
 
+    private String forma_pagamento_pedido;
+
     @Column(name = "preco_total_pedido")
     private float valorTotalPedido;
 

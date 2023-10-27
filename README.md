@@ -102,6 +102,7 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
 {
   "id_cliente_pedido": 1,
   "status_pedido": "Em andamento",
+  "forma_pagamento_pedido": "Debito",
   "pedidoBebida": [
     {
       "quantidade_pedido_bebida": 2,
@@ -218,6 +219,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pedido` (
   `data_pedido` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status_pedido` VARCHAR(45) NOT NULL,
   `preco_total_pedido` float NOT NULL,
+  `forma_pagamento_pedido` VARCHAR(45),
   PRIMARY KEY (`id_pedido`),
   INDEX `fk_cliente_id_idx` (`id_cliente_pedido` ASC) VISIBLE,
   CONSTRAINT `fk_cliente_id`
@@ -316,12 +318,12 @@ insert into pizza values
 (8, "Frango", 40.99),
 (9, "4-Queijos", 42.99);
 
-insert into bebidas values
+insert into bebida values
 (1, "Refrigerante Lata", 5.90),
 (2, "Refrigerante 1.5L", 10.90),
 (3, "Refrigerante 2 Litros", 15.90),
 (4, "Suco em lata", 5.90),
-(5, "Heineken", 10,90),
+(5, "Heineken", 10.90),
 (6, "Agua", 4.00);
 
 ```
