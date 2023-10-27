@@ -71,6 +71,7 @@ public class PedidoController {
     // }
 
     @PostMapping("/fazerPedido")
+    @CrossOrigin(origins = "*") // http://127.0.0.1:5500
     public ResponseEntity<String> fazerPedido(@RequestBody PedidoEntity pedido){
         try {
             float valorTotalPedido = 0;
