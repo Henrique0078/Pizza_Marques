@@ -18,6 +18,7 @@ import APS.PizzariaMarques.Model.Service.PedidoService;
 import APS.PizzariaMarques.Model.Service.PizzaService;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/pedido")
 public class PedidoController {
     
@@ -71,7 +72,6 @@ public class PedidoController {
     // }
 
     @PostMapping("/fazerPedido")
-    @CrossOrigin(origins = "*") // http://127.0.0.1:5500
     public ResponseEntity<String> fazerPedido(@RequestBody PedidoEntity pedido){
         try {
             float valorTotalPedido = 0;

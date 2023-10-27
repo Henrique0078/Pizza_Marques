@@ -10,6 +10,7 @@ import APS.PizzariaMarques.Model.Service.ClienteService;
 import APS.PizzariaMarques.Model.Service.UsuarioService;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/authentication")
 public class LoginController {
     @Autowired
