@@ -14,7 +14,6 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
 <ul>
     <li><a href="https://github.com/Henrique0078/Pizza_Marques/tree/main#autenticação">Autenticação</a></li>
     <ul>
-        <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-usuario">Registrar Usuário</a></li>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#registrar-cliente">Registrar Cliente</a></li>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#signin">SignIn</a></li>
         <li><a href="https://github.com/Henrique0078/Pizza_Marques/blob/main/README.md#salterar-cliente">Alterar Cliente</a></li>
@@ -31,20 +30,6 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
 
 ## Autenticação
 
-### Registrar Usuario
-
-- **Método:** POST
-- **URL:** `http://localhost:9090/authentication/registerUsuario`
-
-**Parâmetros:**
-
-```json
-{
-    "emailUsuario": "Henrique",
-    "senha_usuario": "123"
-}
-```
-
 ### Registrar Cliente
 - **Método:** POST
 - **URL:** `http://localhost:9090/authentication/registerCliente`
@@ -55,7 +40,16 @@ Neste documento, descrevemos os principais endpoints da API, seus métodos HTTP 
 {
     "nm_cliente": "Henrique",
     "cpfCliente": "50",
-    "id_usuario_cliente": 1
+    "logradouro_cliente": "rua",
+    "complemento_cliente":"opa",
+    "estado_cliente": "sp",
+    "cidade_cliente": "sp",
+    "numero_casa_cliente": "50",
+    "id_usuario_cliente": 1,
+    "usuario":{
+        "emailUsuario":"Henrique123",
+        "senha_usuario":"123"
+    }
 }
 ```
 
