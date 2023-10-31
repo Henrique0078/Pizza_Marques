@@ -18,23 +18,12 @@ public class LoginController {
     @Autowired
     private ClienteService clienteService;
 
-    @PostMapping("/registerUsuario")
-    public ResponseEntity<String> cadastrarUsuario(@RequestBody UsuarioEntity newusuario){
-        try {
-            usuarioService.cadastrarUsuario(newusuario);
-            return ResponseEntity.ok("Usuario Registrado");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao cadastrar Usuario: " + e.getMessage());
-        }
-    }
-
     @PostMapping("/registerCliente")
     public ResponseEntity<String> cadastrarCliente(@RequestBody ClienteEntity newCliente){
         try {
             UsuarioEntity usuario = newCliente.getUsuario();
             usuarioService.cadastrarUsuario(usuario);
-            //usuario.setId_usuario(usuario.getId_usuario());
+            usuario.setId_usuario(usuario.getId_usuario());
             newCliente.setId_usuario_cliente(usuario.getId_usuario());
             clienteService.criarCliente(newCliente);
             return ResponseEntity.ok("Cliente Registrado");

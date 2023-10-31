@@ -1,7 +1,5 @@
 package APS.PizzariaMarques.Model.Entity;
 
-import org.hibernate.mapping.List;
-
 import jakarta.persistence.*;
 import lombok.*;
 
