@@ -29,7 +29,7 @@ public class LoginController {
             return ResponseEntity.ok(usuario);
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao cadastrar Clente: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao cadastrar Cliente: " + e.getMessage());
         }
     }
 
