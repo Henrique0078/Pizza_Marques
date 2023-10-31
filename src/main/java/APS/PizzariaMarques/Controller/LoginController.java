@@ -32,6 +32,10 @@ public class LoginController {
     @PostMapping("/registerCliente")
     public ResponseEntity<String> cadastrarCliente(@RequestBody ClienteEntity newCliente){
         try {
+            UsuarioEntity usuario = newCliente.getUsuario();
+            usuarioService.cadastrarUsuario(usuario);
+            //usuario.setId_usuario(usuario.getId_usuario());
+            newCliente.setId_usuario_cliente(usuario.getId_usuario());
             clienteService.criarCliente(newCliente);
             return ResponseEntity.ok("Cliente Registrado");
         } catch (Exception e) {
