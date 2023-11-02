@@ -38,7 +38,7 @@ public class LoginController {
     public ResponseEntity<?> logarUsuario(@RequestBody UsuarioEntity usuario){
         try {
             ResponseEntity<UsuarioEntity> sUsuario = usuarioService.logarUsuario(usuario.getEmailUsuario(), usuario.getSenha_usuario());
-            return ResponseEntity.status(HttpStatus.OK).body(sUsuario);
+            return sUsuario;
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao Autenticar: " + e.getMessage());
