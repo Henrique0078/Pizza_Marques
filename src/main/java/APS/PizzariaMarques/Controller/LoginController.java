@@ -34,7 +34,7 @@ public class LoginController {
     }
 
 
-    @GetMapping("/signIn")
+    @PostMapping("/signIn")
     public ResponseEntity<?> logarUsuario(@RequestBody UsuarioEntity usuario){
         try {
             ResponseEntity<UsuarioEntity> sUsuario = usuarioService.logarUsuario(usuario.getEmailUsuario(), usuario.getSenha_usuario());
